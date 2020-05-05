@@ -1,5 +1,7 @@
 export const state = () => ({
-  menu: {}
+  menu: {},
+  locales: ['en', 'fr'],
+  locale: 'en'
 })
 
 export const mutations = {
@@ -8,6 +10,11 @@ export const mutations = {
   },
   SET_ERROR(state, error) {
     state.menu = error
+  },
+  SET_LANG (state, locale) {
+    if (state.locales.includes(locale)) {
+      state.locale = locale
+    }
   }
 }
 
