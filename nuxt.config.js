@@ -36,6 +36,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '@/plugins/i18n.js' }
   ],
 
   /*
@@ -46,7 +47,28 @@ export default {
     '@/modules/static',
     '@/modules/crawler',
     // https://prismic-nuxt.js.org/
-    '@nuxtjs/prismic'
+    '@nuxtjs/prismic',
+    ['nuxt-i18n', {
+      lazy: true,
+      locales: [
+        {
+          name: 'French',
+          code: 'fr',
+          iso: 'fr-fr',
+          file: 'fr.json'
+        },
+        {
+          name: 'English',
+          code: 'en',
+          iso: 'en-gb',
+          file: 'en.json'
+        },
+      ],
+      langDir: 'lang/',
+      defaultLocale: 'en',
+      parsePages: false, // Required
+      pages: {}
+   }]
   ],
 
   prismic: {

@@ -202,7 +202,7 @@ function resolveComponents (router) {
 }
 
 function callMiddleware (Components, context, layout) {
-  let midd = ["prismic_preview","nuxt_static"]
+  let midd = ["prismic_preview","nuxt_static","nuxti18n"]
   let unknownMiddleware = false
 
   // If layout is undefined, only call global middleware

@@ -12,11 +12,14 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
+import nuxt_plugin_pluginrouting_be06e596 from 'nuxt_plugin_pluginrouting_be06e596' // Source: ./nuxt-i18n/plugin.routing.js (mode: 'all')
+import nuxt_plugin_pluginmain_253d1b4c from 'nuxt_plugin_pluginmain_253d1b4c' // Source: ./nuxt-i18n/plugin.main.js (mode: 'all')
 import nuxt_plugin_prismic_598dba6f from 'nuxt_plugin_prismic_598dba6f' // Source: ./prismic/plugins/prismic.js (mode: 'all')
 import nuxt_plugin_prismiccomponents_5d4f66c8 from 'nuxt_plugin_prismiccomponents_5d4f66c8' // Source: ./prismic/plugins/prismic-components.js (mode: 'all')
 import nuxt_plugin_prismicpreview_e6b96f68 from 'nuxt_plugin_prismicpreview_e6b96f68' // Source: ./prismic/middleware/prismic_preview.js (mode: 'all')
 import nuxt_plugin_crawlerplugin91efe262_2ad956a4 from 'nuxt_plugin_crawlerplugin91efe262_2ad956a4' // Source: ./crawler.plugin.91efe262.js (mode: 'all')
 import nuxt_plugin_staticplugin3e30a89d_c8705a0a from 'nuxt_plugin_staticplugin3e30a89d_c8705a0a' // Source: ./static.plugin.3e30a89d.js (mode: 'all')
+import nuxt_plugin_i18n_66ff12a5 from 'nuxt_plugin_i18n_66ff12a5' // Source: ../plugins/i18n.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -173,6 +176,14 @@ async function createApp (ssrContext) {
 
   // Plugin execution
 
+  if (typeof nuxt_plugin_pluginrouting_be06e596 === 'function') {
+    await nuxt_plugin_pluginrouting_be06e596(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_pluginmain_253d1b4c === 'function') {
+    await nuxt_plugin_pluginmain_253d1b4c(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_prismic_598dba6f === 'function') {
     await nuxt_plugin_prismic_598dba6f(app.context, inject)
   }
@@ -191,6 +202,10 @@ async function createApp (ssrContext) {
 
   if (typeof nuxt_plugin_staticplugin3e30a89d_c8705a0a === 'function') {
     await nuxt_plugin_staticplugin3e30a89d_c8705a0a(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_i18n_66ff12a5 === 'function') {
+    await nuxt_plugin_i18n_66ff12a5(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

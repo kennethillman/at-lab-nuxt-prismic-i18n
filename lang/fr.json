@@ -9,8 +9,8 @@
     "title": "Bienvenue",
     "introduction": "Ceci est un texte d'introduction en Français."
   },
-  "about": {
-    "title": "À propos",
-    "introduction": "Cette page est faite pour vous donner plus d'informations."
+  "page": {
+    "title": "FRENCH (static from json)",
+    "introduction": "Ceci est un texte d'introduction en Français."
   }
 }

@@ -9,8 +9,8 @@
     "title": "Welcome",
     "introduction": "This is an introduction in English."
   },
-  "about": {
-    "title": "About",
+  "page": {
+    "title": "ENGLISH (static from json)",
     "introduction": "This page is made to give you more informations."
   }
 }

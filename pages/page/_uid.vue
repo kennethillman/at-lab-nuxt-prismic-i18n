@@ -1,6 +1,11 @@
 <template>
   <section>
+    <!-- i18n -->
+    <h6>(Static from json)</h6>
+    <h2>{{ $t('page.title') }}</h2>
+    <h4>{{ $t('page.introduction') }}</h4> <br><br><br>
     <!-- Slices block component -->
+    <h6>(From Prismic.io)</h6>
     <slices-block :slices="slices"/>
   </section>
 </template>
@@ -14,19 +19,26 @@ export default {
   components: {
     SlicesBlock
   },
-  async asyncData({ $prismic, params, error }) {
+  async asyncData({ $prismic, params, error, app}) {
     try{
-      // Query to get post content
-      const document = (await $prismic.api.getByUID('page', params.uid)).data
+
+      let page
+      const prismicLang =  app.i18n.locale+"-"+app.i18n.locale
+
+      if (app.i18n.locale !== app.i18n.defaultLocale){
+        page = (await $prismic.api.getByUID('page', params.uid, { lang : prismicLang })).data
+      } else {
+        page = (await $prismic.api.getByUID('page', params.uid)).data
+      }
 
       return {
         // Set slices as variable
-        slices: document.page_content
+        slices: page.page_content
       }
     } catch (e) {
       // Returns error page
       error({ statusCode: 404, message: 'Page not found' })
     }
-  },
+  }
 }
 </script>

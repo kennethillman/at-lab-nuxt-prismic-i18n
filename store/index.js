@@ -1,33 +1,37 @@
 export const state = () => ({
   menu: {},
-  locales: ['en', 'fr'],
-  locale: 'en'
+  menu_fr: {}
 })
 
 export const mutations = {
   SET_MENU(state, menu) {
     state.menu = menu
   },
+  SET_MENU_FR(state, menu_fr) {
+    state.menu_fr = menu_fr
+  },
   SET_ERROR(state, error) {
     state.menu = error
-  },
-  SET_LANG (state, locale) {
-    if (state.locales.includes(locale)) {
-      state.locale = locale
-    }
   }
 }
 
 export const actions = {
   async fetchMenu({ commit }, $prismic) {
     try {
-      const menu = (await $prismic.api.getSingle('menu')).data
-
+      
+      let menu,menu_fr
+      
+      menu_fr = (await $prismic.api.getSingle('menu', { lang : 'fr-fr' })).data
+      menu = (await $prismic.api.getSingle('menu')).data
+      
       commit('SET_MENU', menu)
-    } catch (e) {
-      const error = 'Please create a menu document'
+      commit('SET_MENU_FR', menu_fr)
 
+    } catch (e) {
+      
+      const error = 'Please create a menu document'
       commit('SET_ERROR', error);
+
     }
   }
 }
