@@ -29,14 +29,17 @@ export default {
     SlicesBlock
   },
   async asyncData({ $prismic, error, app}) {
+    console.log('app.i18n.locale -> ' + app.i18n.locale);
  
     try {
 
       let homepage
       const prismicLang =  app.i18n.locale+"-"+app.i18n.locale
 
-      if (app.i18n.locale !== app.i18n.defaultLocale){
+      if (app.i18n.locale === 'fr'){
         homepage = (await $prismic.api.getSingle('homepage', { lang : prismicLang })).data
+      } else if (app.i18n.locale === 'sv'){
+        homepage = (await $prismic.api.getSingle('homepage', { lang : 'sv-se' })).data
       } else {
         homepage = (await $prismic.api.getSingle('homepage')).data
       }

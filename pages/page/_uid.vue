@@ -25,8 +25,10 @@ export default {
       let page
       const prismicLang =  app.i18n.locale+"-"+app.i18n.locale
 
-      if (app.i18n.locale !== app.i18n.defaultLocale){
+      if (app.i18n.locale === 'fr'){
         page = (await $prismic.api.getByUID('page', params.uid, { lang : prismicLang })).data
+      }  else if (app.i18n.locale === 'sv'){
+        page = (await $prismic.api.getByUID('page', params.uid, { lang : 'sv-se' })).data
       } else {
         page = (await $prismic.api.getByUID('page', params.uid)).data
       }

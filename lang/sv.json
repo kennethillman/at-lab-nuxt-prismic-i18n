@@ -1,0 +1,16 @@
+{
+  "links": {
+    "home": "Hem",
+    "about": "Om oss",
+    "english": "English version",
+    "french": "French version"
+  },
+  "home": {
+    "title": "Välkommen",
+    "introduction": "Det här är en introduction till Svenska."
+  },
+  "page": {
+    "title": "SVENSKA (static from json)",
+    "introduction": "Den här sidan är gjord för att ge dig mer infirmation."
+  }
+}

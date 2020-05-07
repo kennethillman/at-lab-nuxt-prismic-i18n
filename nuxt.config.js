@@ -63,6 +63,12 @@ export default {
           iso: 'en-gb',
           file: 'en.json'
         },
+        {
+          name: 'Swedish',
+          code: 'sv',
+          iso: 'sv-se',
+          file: 'sv.json'
+        },
       ],
       langDir: 'lang/',
       defaultLocale: 'en',

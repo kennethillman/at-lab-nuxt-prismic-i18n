@@ -1,7 +1,7 @@
 <template>
   <header class="site-header">
     <p v-if="$store.state.menu === 'Please create a menu document'" class="logo">{{ $store.state.menu }}</p>
-    
+
     <nuxt-link :to="localePath('/')" class="logo">{{ $prismic.asText($store.state.menu.title) }}</nuxt-link>
     
     <nav>
@@ -9,19 +9,24 @@
         <li v-for="(menuLink,index) in $store.state.menu.menu_links" :key="menuLink.id">
           <nuxt-link v-if="$i18n.locale === 'en'" :to="localePath($prismic.asLink(menuLink.link))">{{ $prismic.asText(menuLink.label) }}</nuxt-link>
           <nuxt-link v-if="$i18n.locale === 'fr'" :to="localePath($prismic.asLink(menuLink.link))">{{ $prismic.asText($store.state.menu_fr.menu_links[index].label) }}</nuxt-link>
+          <nuxt-link v-if="$i18n.locale === 'sv'" :to="localePath($prismic.asLink(menuLink.link))">{{ $prismic.asText($store.state.menu_sv.menu_links[index].label) }}</nuxt-link>
         </li>
-        <li><nuxt-link :to="switchLocalePath('en')">English</nuxt-link></li>
-        <li><nuxt-link :to="switchLocalePath('fr')">Français</nuxt-link></li>
+        <li><nuxt-link :to="switchLocalePath('sv')">SV</nuxt-link></li>
+        <li><nuxt-link :to="switchLocalePath('en')">EN</nuxt-link></li>
+        <li><nuxt-link :to="switchLocalePath('fr')">FR</nuxt-link></li>
       </ul>
     </nav>
+    <div></div>
   </header>
 </template>
 
 <script>
 export default {
-  name: 'header-prismic'
+  name: 'header-prismic',
 }
 </script>
+
+
 
 <style lang="sass">
 .site-header
