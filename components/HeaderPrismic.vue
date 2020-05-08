@@ -11,9 +11,9 @@
           <nuxt-link v-if="$i18n.locale === 'fr'" :to="localePath($prismic.asLink(menuLink.link))">{{ $prismic.asText($store.state.menu_fr.menu_links[index].label) }}</nuxt-link>
           <nuxt-link v-if="$i18n.locale === 'sv'" :to="localePath($prismic.asLink(menuLink.link))">{{ $prismic.asText($store.state.menu_sv.menu_links[index].label) }}</nuxt-link>
         </li>
-        <li><nuxt-link :to="switchLocalePath('sv')">SV</nuxt-link></li>
-        <li><nuxt-link :to="switchLocalePath('en')">EN</nuxt-link></li>
-        <li><nuxt-link :to="switchLocalePath('fr')">FR</nuxt-link></li>
+        <li v-if="$i18n.locale !== 'sv'"><nuxt-link :to="switchLocalePath('sv')">SV</nuxt-link></li>
+        <li v-if="$i18n.locale !== 'en'"><nuxt-link :to="switchLocalePath('en')">EN</nuxt-link></li>
+        <li v-if="$i18n.locale !== 'fr'"><nuxt-link :to="switchLocalePath('fr')">FR</nuxt-link></li>
       </ul>
     </nav>
     <div></div>
