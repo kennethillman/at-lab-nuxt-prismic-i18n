@@ -74,6 +74,16 @@ export default {
       defaultLocale: 'en',
       parsePages: false, // Required
       pages: {}
+
+      //
+      // i18n -> TOUCHED FILES
+      //
+      // store/index.js
+      // components/HeaderPrismic.js -> "MENU"
+      // pages/*/*.vue -> "ASYNC GET CONTENT" 
+      // plugins/i18n.js
+      // lang/*.json
+
    }]
   ],
 
