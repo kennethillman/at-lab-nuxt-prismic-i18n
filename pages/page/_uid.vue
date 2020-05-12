@@ -1,12 +1,16 @@
 <template>
   <section>
-    <!-- i18n -->
-    <h6>(Static from json)</h6>
-    <h2>{{ $t('page.title') }}</h2>
-    <h4>{{ $t('page.introduction') }}</h4> <br><br><br>
-    <!-- Slices block component -->
-    <h6>(From Prismic.io)</h6>
+ 
+    <div class="container">
+      <!-- i18n - From json-->
+      <h6 class="label">From json</h6>
+      <h2 class="title">{{ $t('page.title') }}</h2>
+      <h4>{{ $t('page.introduction') }}</h4> <br><br><br>
+      <h6 class="label">From Prismic.io</h6>
+    </div>
+
     <slices-block :slices="slices"/>
+    
   </section>
 </template>
 

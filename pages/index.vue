@@ -1,15 +1,17 @@
 <template>
   <section>
 
+    <div class="container">
+      <!-- i18n - From json-->
+      <h6 class="label">From json</h6>
+      <h2 class="title">{{ $t('home.title') }}</h2>
+      <h4>{{ $t('home.introduction') }}</h4> <br><br><br>
+      <h6 class="label">From Prismic.io</h6>
+    </div>
    
-    <!-- i18n -->
-    <h6>(Static from json)</h6>
-    <h2>{{ $t('home.title') }}</h2>
-    <h4>{{ $t('home.introduction') }}</h4> <br><br><br>
-    <h6>(From Prismic.io)</h6>
-
     <!-- Banner component -->
     <homepage-banner :banner="banner"/>
+    
     <!-- Slices block component -->
     <slices-block :slices="slices"/>
 
@@ -29,7 +31,7 @@ export default {
     SlicesBlock
   },
   async asyncData({ $prismic, error, app}) {
-    console.log('app.i18n.locale -> ' + app.i18n.locale);
+    console.log('app.i18n.locales -> ' + app.i18n.locales);
  
     try {
 
@@ -43,6 +45,8 @@ export default {
       } else {
         homepage = (await $prismic.api.getSingle('homepage')).data
       }
+
+    //  console.log('app.i18n -> ' , app.i18n);
     
       return {
         banner: homepage.homepage_banner[0],
@@ -54,3 +58,18 @@ export default {
   }
 }
 </script>
+
+<style type="text/css">
+  .label {
+    background-color: #484d52;
+    display: inline-block;
+    padding: 6px 8px 7px;
+    line-height: 1;
+    font-size: 11px;
+    color: #f6f6f6;
+    border-radius: 4px;
+  }
+  .title {
+    margin-top: 20px;
+  }
+</style>

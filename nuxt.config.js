@@ -51,17 +51,18 @@ export default {
     ['nuxt-i18n', {
       lazy: true,
       locales: [
+        
+        {
+          name: 'English',
+          code: 'en',
+          iso: 'en-us',
+          file: 'en.json'
+        },
         {
           name: 'French',
           code: 'fr',
           iso: 'fr-fr',
           file: 'fr.json'
-        },
-        {
-          name: 'English',
-          code: 'en',
-          iso: 'en-gb',
-          file: 'en.json'
         },
         {
           name: 'Swedish',

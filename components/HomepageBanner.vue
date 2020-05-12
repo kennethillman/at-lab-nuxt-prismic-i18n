@@ -23,7 +23,7 @@ export default {
 
 <style lang="sass" scoped>
 .homepage-banner
-  margin: -70px 0 80px
+  margin: 20px 0 80px
   padding: 10em 0 8em
   background-position: center center
   background-size: cover
@@ -45,7 +45,7 @@ export default {
   font-size: 70px
   font-weight: 900
   line-height: 70px
-
+  margin-top: 20px;
 .banner-button
   background: #ffffff
   border-radius: 7px
