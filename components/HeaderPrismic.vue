@@ -5,18 +5,34 @@
     <nuxt-link :to="localePath('/')" class="logo">{{ $prismic.asText($store.state.menu.title) }}</nuxt-link>
     
     <nav>
-      <ul>
+     
+      <ul v-if="$i18n.locale === 'en'">
         <li v-for="(menuLink,index) in $store.state.menu.menu_links" :key="menuLink.id">
-          <nuxt-link v-if="$i18n.locale === 'en'" :to="localePath($prismic.asLink(menuLink.link))">{{ $prismic.asText(menuLink.label) }}</nuxt-link>
-          <nuxt-link v-if="$i18n.locale === 'fr'" :to="localePath($prismic.asLink(menuLink.link))">{{ $prismic.asText($store.state.menu_fr.menu_links[index].label) }}</nuxt-link>
-          <nuxt-link v-if="$i18n.locale === 'sv'" :to="localePath($prismic.asLink(menuLink.link))">{{ $prismic.asText($store.state.menu_sv.menu_links[index].label) }}</nuxt-link>
+          <nuxt-link :to="localePath($prismic.asLink(menuLink.link))">{{ $prismic.asText(menuLink.label) }}</nuxt-link>
         </li>
+      </ul>
+
+      <ul v-if="$i18n.locale === 'fr'">
+        <li v-for="(menuLink,index) in $store.state.menu_fr.menu_links" :key="menuLink.id">
+          <nuxt-link :to="localePath($prismic.asLink(menuLink.link))">{{ $prismic.asText(menuLink.label) }}</nuxt-link>
+        </li>
+      </ul>
+
+      <ul v-if="$i18n.locale === 'sv'">
+        <li v-for="(menuLink,index) in $store.state.menu_sv.menu_links" :key="menuLink.id">
+          <nuxt-link :to="localePath($prismic.asLink(menuLink.link))">{{ $prismic.asText(menuLink.label) }}</nuxt-link>
+        </li>
+      </ul>
+
+      <ul class="langs">
         <li v-if="$i18n.locale !== 'sv'"><nuxt-link :to="switchLocalePath('sv')">SV</nuxt-link></li>
         <li v-if="$i18n.locale !== 'en'"><nuxt-link :to="switchLocalePath('en')">EN</nuxt-link></li>
         <li v-if="$i18n.locale !== 'fr'"><nuxt-link :to="switchLocalePath('fr')">FR</nuxt-link></li>
       </ul>
+
+
     </nav>
-    <div></div>
+
   </header>
 </template>
 
