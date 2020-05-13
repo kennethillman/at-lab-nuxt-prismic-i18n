@@ -55,7 +55,7 @@ Add language choice and navigation to the [header](https://github.com/kennethill
 Updated async asyncData so prismic get data according to locale. [pages](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/tree/master/pages)  _(Needs refinement)_ 
 
 ### plugins/i18n.js
-Added plugin [i18n.js]((https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/blob/master/plugins/i18n.js)). 
+Added plugin [i18n]((https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/blob/master/plugins/i18n.js)). 
 
 ### lang/*.json
 Added the [languages](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/tree/master/lang).
