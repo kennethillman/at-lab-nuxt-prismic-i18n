@@ -37,7 +37,7 @@ This was a quick POC according to the [nuxt-i18n documentation](https://nuxt-com
 ### Prismic.io
 I added two locales 'fr-fr' and 'sv-se', my deafult was 'en-us'.
 And i added content for each page and locale. 
-You can easaly [copy](https://user-guides.prismic.io/en/articles/2760541-copy-content-to-a-different-locale) your content form one locale to another in prismic. 
+You can easily [copy](https://user-guides.prismic.io/en/articles/2760541-copy-content-to-a-different-locale) your content form one locale to another in prismic. 
 
 ### nuxt-i18n
 
@@ -45,17 +45,21 @@ You can easaly [copy](https://user-guides.prismic.io/en/articles/2760541-copy-co
 npm i nuxt-i18n
 ```
 
-### store/index.js
-I had to fetch three menus, one for each language and add them to the [store](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/blob/master/store/index.js). 
+### [store/index.js](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/blob/master/store/index.js)
+I had to fetch three menus, one for each language and add them to the store. 
 
-### components/HeaderPrismic.js
-Add language choice and navigation to the [header](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/blob/master/components/HeaderPrismic.vue) according to i18n.locale. _(Needs refinement)_ 
+### [components/HeaderPrismic.js](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/blob/master/components/HeaderPrismic.vue) 
+Add language choice and navigation to the header according to i18n.locale. _(Needs refinement)_ 
 
-### pages
-Updated async asyncData so prismic get data according to locale. [pages](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/tree/master/pages)  _(Needs refinement)_ 
+### [pages](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/tree/master/pages)
+Updated async asyncData so prismic get data according to locale. _(Needs refinement)_ 
 
-### plugins/i18n.js
-Added plugin [i18n]((https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/blob/master/plugins/i18n.js)). 
+### [plugins/i18n.js](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/blob/master/plugins/i18n.js)
+Added plugin i18n.js. 
 
-### lang/*.json
-Added the [languages](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/tree/master/lang).
+### [lang](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/tree/master/lang)
+Added the languag json files.
+
+### [nuxt.config.js](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/blob/master/nuxt.config.js)
+Added the the i18.js plugin and nuxt-i18n module with configuration. 
+
