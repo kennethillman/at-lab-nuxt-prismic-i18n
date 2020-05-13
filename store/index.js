@@ -1,8 +1,9 @@
 export const state = () => ({
   menu_en: {},
   menu_fr: {},
-  menu_sv: {}
-})
+  menu_sv: {},
+  error: false
+}) 
 
 export const mutations = {
   SET_MENU_EN(state, menu_en) {
@@ -15,7 +16,7 @@ export const mutations = {
     state.menu_sv = menu_sv
   },
   SET_ERROR(state, error) {
-    state.menu = error
+    state.error = error
   }
 }
 
@@ -32,11 +33,11 @@ export const actions = {
       commit('SET_MENU_EN', menu_en)
       commit('SET_MENU_FR', menu_fr)
       commit('SET_MENU_SV', menu_sv)
+      commit('SET_ERROR', false);
 
     } catch (e) {
       
-      const error = 'Please create a menu document'
-      commit('SET_ERROR', error);
+      commit('SET_ERROR', true);
 
     }
   }

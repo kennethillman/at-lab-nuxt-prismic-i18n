@@ -1,6 +1,6 @@
 <template>
   <header class="site-header">
-    <p v-if="$store.state.menu === 'Please create a menu document'" class="logo">{{ $store.state.menu }}</p>
+    <p v-if="$store.state.error" class="logo">An menu loading error -> store/index.js</p>
     
     <nav>
 
