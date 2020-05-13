@@ -2,14 +2,17 @@
   <section>
  
     <div class="container">
-      <!-- i18n - From json-->
-      <h6 class="label">From json</h6>
-      <h2 class="title">{{ $t('page.title') }}</h2>
-      <h4>{{ $t('page.introduction') }}</h4> <br><br><br>
       <h6 class="label">From Prismic.io</h6>
     </div>
 
     <slices-block :slices="slices"/>
+
+    <div class="container">
+      <!-- i18n - From json-->
+      <h6 class="label">From json</h6>
+      <h2 class="title">{{ $t('page.title') }}</h2>
+      <h4>{{ $t('page.introduction') }}</h4> <br><br><br>
+    </div>
 
   </section>
 </template>
