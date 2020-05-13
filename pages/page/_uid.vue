@@ -10,7 +10,7 @@
     </div>
 
     <slices-block :slices="slices"/>
-    
+
   </section>
 </template>
 
@@ -27,10 +27,9 @@ export default {
     try{
 
       let page
-      const prismicLang =  app.i18n.locale+"-"+app.i18n.locale
 
       if (app.i18n.locale === 'fr'){
-        page = (await $prismic.api.getByUID('page', params.uid, { lang : prismicLang })).data
+        page = (await $prismic.api.getByUID('page', params.uid, { lang : 'fr-fr' })).data
       }  else if (app.i18n.locale === 'sv'){
         page = (await $prismic.api.getByUID('page', params.uid, { lang : 'sv-se' })).data
       } else {

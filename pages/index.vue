@@ -11,7 +11,7 @@
    
     <!-- Banner component -->
     <homepage-banner :banner="banner"/>
-    
+
     <!-- Slices block component -->
     <slices-block :slices="slices"/>
 
@@ -30,23 +30,18 @@ export default {
     HomepageBanner,
     SlicesBlock
   },
-  async asyncData({ $prismic, error, app}) {
-    console.log('app.i18n.locales -> ' + app.i18n.locales);
- 
+  async asyncData({ $prismic, error, app}) { 
     try {
 
       let homepage
-      const prismicLang =  app.i18n.locale+"-"+app.i18n.locale
 
       if (app.i18n.locale === 'fr'){
-        homepage = (await $prismic.api.getSingle('homepage', { lang : prismicLang })).data
+        homepage = (await $prismic.api.getSingle('homepage', { lang : 'fr-fr' })).data
       } else if (app.i18n.locale === 'sv'){
         homepage = (await $prismic.api.getSingle('homepage', { lang : 'sv-se' })).data
       } else {
         homepage = (await $prismic.api.getSingle('homepage')).data
       }
-
-    //  console.log('app.i18n -> ' , app.i18n);
     
       return {
         banner: homepage.homepage_banner[0],
@@ -60,6 +55,8 @@ export default {
 </script>
 
 <style type="text/css">
+  
+  /* Not scoped*/
   .label {
     background-color: #484d52;
     display: inline-block;
@@ -72,4 +69,5 @@ export default {
   .title {
     margin-top: 20px;
   }
+  
 </style>

@@ -1,8 +1,6 @@
 <template>
   <header class="site-header">
     <p v-if="$store.state.menu === 'Please create a menu document'" class="logo">{{ $store.state.menu }}</p>
-
-    <!-- <nuxt-link :to="localePath('/')" class="logo">{{ $prismic.asText($store.state.menu.title) }}</nuxt-link> -->
     
     <nav>
 
@@ -29,18 +27,6 @@
           </li>
         </template>   
       </ul>
-
-<!--       <ul v-if="$i18n.locale === 'fr'">
-        <li v-for="(menuLink,index) in $store.state.menu_fr.menu_links" :key="menuLink.id">
-          <nuxt-link :to="localePath($prismic.asLink(menuLink.link))">{{ $prismic.asText(menuLink.label) }}</nuxt-link>
-        </li>
-      </ul>
-
-      <ul v-if="$i18n.locale === 'sv'">
-        <li v-for="(menuLink,index) in $store.state.menu_sv.menu_links" :key="menuLink.id">
-          <nuxt-link :to="localePath($prismic.asLink(menuLink.link))">{{ $prismic.asText(menuLink.label) }}</nuxt-link>
-        </li>
-      </ul> -->
 
     </nav>
 
@@ -84,6 +70,7 @@ export default {
       font-size: 12px
       &.current-lang
         color: red
+        text-decoration: underline
 
 .site-header
   .logo
