@@ -5,6 +5,10 @@
 
 > [Demo](at-lab-nuxt-prismic-i18n.netlify.app/) 
 
+# This demo is based on  
+
+> [Phil Snows - Nuxt/Prismic Multipage demo](https://github.com/prismicio/nuxtjs-website) 
+
 
 ## Launch this project in your local environment
 

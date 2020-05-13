@@ -1,7 +1,7 @@
 {
   "name": "at-lab-nuxt-prismic-preview",
   "version": "1.0.0",
-  "description": "An Active Talents test for i18n with Nuxt / Prismic preview based on Prismic multipage demo",
+  "description": "An Active Talents test for i18n with Nuxt / Prismic preview based on Phil Snows Prismic multipage demo",
   "author": "Kenneth Illman",
   "private": true,
   "scripts": {
@@ -17,8 +17,7 @@
     "nuxt": "^2.11.0",
     "nuxt-i18n": "^6.11.0",
     "prismic-javascript": "^2.1.5",
-    "prismic-vue": "^2.0.0",
-    "vue-i18n": "^8.17.4"
+    "prismic-vue": "^2.0.0"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",
