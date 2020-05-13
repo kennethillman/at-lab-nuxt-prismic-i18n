@@ -7,9 +7,13 @@
         </h2>
         <!-- Template for page tagline. -->
         <p class="banner-description">{{ $prismic.asText(banner.tagline) }}</p>
-        <prismic-link class="banner-button" :field="banner.button_link">
-          {{ $prismic.asText(banner.button_label) }}
-        </prismic-link>
+
+        <template v-if="banner.button_link.url">
+          <prismic-link class="banner-button" :field="banner.button_link">
+            {{ $prismic.asText(banner.button_label) }}
+          </prismic-link>
+        </template>
+        
       </div>
     </section>
 </template>
@@ -45,7 +49,7 @@ export default {
   font-size: 70px
   font-weight: 900
   line-height: 70px
-  margin-top: 20px;
+  margin-top: 20px
 .banner-button
   background: #ffffff
   border-radius: 7px

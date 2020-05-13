@@ -1,16 +1,10 @@
 {
-  "links": {
-    "home": "Hem",
-    "about": "Om oss",
-    "english": "English version",
-    "french": "French version"
-  },
   "home": {
     "title": "Välkommen",
-    "introduction": "Det här är en introduction till Svenska."
+    "introduction": "Den här sidan är gjord för att ge dig mer informatoon om Nuxt / nuxt-i18n och Prismic.io."
   },
   "page": {
     "title": "SVENSKA (static from json)",
-    "introduction": "Den här sidan är gjord för att ge dig mer infirmation."
+    "introduction": "Den här sidan är gjord för att ge dig mer informatoon om Nuxt / nuxt-i18n och Prismic.io."
   }
 }

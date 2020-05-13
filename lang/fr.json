@@ -1,10 +1,4 @@
 {
-  "links": {
-    "home": "Accueil",
-    "about": "À propos",
-    "english": "Version Anglaise",
-    "french": "Version Française"
-  },
   "home": {
     "title": "Bienvenue",
     "introduction": "Ceci est un texte d'introduction en Français."
