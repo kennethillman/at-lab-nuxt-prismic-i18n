@@ -30,16 +30,16 @@ npm start
 
 > [Prismic Nuxt.js Documentation](https://prismic.io/docs/vuejs/beyond-the-api/primsic-nuxt)
 
-# i18n Implementation
+# nuxt-i18n Implementation
 
 This was a quick POC according to the [nuxt-i18n documentation](https://nuxt-community.github.io/nuxt-i18n/).
 
-### prismic
+### Prismic.io
 I added two locales 'fr-fr' and 'sv-se', my deafult was 'en-us'.
 And i added content for each page and locale. 
 You can easaly [copy](https://user-guides.prismic.io/en/articles/2760541-copy-content-to-a-different-locale) your content form one locale to another in prismic. 
 
-### nuxt-n18i
+### nuxt-i18n
 
 ``` bash
 npm i nuxt-i18n
@@ -51,8 +51,8 @@ I had to fetch three menus, one for each language and add them to the [store](ht
 ### components/HeaderPrismic.js
 Add language choice and navigation to the [header](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/blob/master/components/HeaderPrismic.vue) according to i18n.locale. _(Needs refinement)_ 
 
-### pages/*/*.vue
-Updated async asyncData so prismic get data according to locale. _(Needs refinement)_ 
+### pages
+Updated async asyncData so prismic get data according to locale. [pages](https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/tree/master/pages)  _(Needs refinement)_ 
 
 ### plugins/i18n.js
 Added plugin [i18n.js]((https://github.com/kennethillman/at-lab-nuxt-prismic-i18n/blob/master/plugins/i18n.js)). 
