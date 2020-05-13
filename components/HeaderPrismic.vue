@@ -61,6 +61,8 @@ export default {
     color: #000
   nav 
     text-align: right
+    .nuxt-link-exact-active
+      text-decoration: underline
     a:hover
       color: #c8c9cb
   .langs
