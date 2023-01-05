@@ -14,7 +14,7 @@
   "dependencies": {
     "@nuxtjs/prismic": "^1.2.1",
     "cookies": "^0.8.0",
-    "nuxt": "^2.11.0",
+    "nuxt": "^2.15.8",
     "nuxt-i18n": "^6.11.0",
     "prismic-javascript": "^2.1.5",
     "prismic-vue": "^2.0.0"
